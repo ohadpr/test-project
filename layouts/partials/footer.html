@@ -1,0 +1,11 @@
+<!-- Footer -->
+<section id="footer">
+    <ul class="icons">
+        {{ range $link := .Site.Params.footer.social_links }}
+        <li><a href="{{ $link.link_url }}" class="icon alt {{ $link.icon }}"><span class="label">{{ $link.title }}</span></a></li>
+        {{ end }}
+    </ul>
+    <p class="copyright">
+        {{ .Site.Params.footer.copyright | safeHTML }}
+    </p>
+</section>

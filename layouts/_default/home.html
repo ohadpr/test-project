@@ -1,0 +1,13 @@
+{{ define "content" }}
+{{ partial "banner.html" . }}
+{{ $cyc := slice "style1" "style2 alt" }}
+
+{{ range $section_idx, $section := .Params.sections }}
+    <!-- Section -->
+    <section class="wrapper {{ index $cyc (mod $section_idx 2) }}" {{ if $section.section_id }}id="{{ $section.section_id }}"{{ end }}>
+        
+        {{ partial $section.component $section }}
+    </section>
+{{ end }}
+
+{{ end }}

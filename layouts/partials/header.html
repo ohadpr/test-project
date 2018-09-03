@@ -1,0 +1,31 @@
+<!-- Header -->
+<section id="header" {{ if eq .Params.layout "home" }}class="alt"{{ end }}>
+    <!-- Logo -->
+    <a href="{{ .Site.BaseURL }}" class="logo"><strong>{{ .Site.Title }}</strong></a>
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li {{ if eq .Params.layout "home" }}class="current"{{ end }}><a href="{{ .Site.BaseURL }}">Home</a></li>
+            <li>
+                <a href="#" class="icon fa-angle-down">Dropdown</a>
+                <ul>
+                    <li><a href="#">Option One</a></li>
+                    <li><a href="#">Option Two</a></li>
+                    <li><a href="#">Option Three</a></li>
+                    <li>
+                        <a href="#">Submenu</a>
+                        <ul>
+                            <li><a href="#">Option One</a></li>
+                            <li><a href="#">Option Two</a></li>
+                            <li><a href="#">Option Three</a></li>
+                            <li><a href="#">Option Four</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            {{ range $item := .Site.Menus.main }}
+            <li><a href="{{ $item.URL | relURL }}">{{ $item.Name }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</section>

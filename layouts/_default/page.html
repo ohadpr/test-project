@@ -1,0 +1,22 @@
+{{ define "content" }}
+<!-- Section -->
+<section class="wrapper style1">
+    <div class="inner">
+        <header class="major special">
+            <h1>{{ .Title }}</h1>
+            <p>{{ replace .Params.subtitle "\n" "<br />" | safeHTML }}</p>
+        </header>
+        {{ if .Params.img_path }}
+        <div class="image main"><img src="{{ .Params.img_path | relURL }}" alt="" /></div>
+        {{ end }}
+        {{ $sections := split .Content "<!--section-->" }}
+        {{ $paragraph_len := len $sections }}
+        {{ range $paragraph_idx, $paragraph := $sections }}
+            {{ $paragraph | markdownify }}
+            {{ if not (eq $paragraph_idx (sub $paragraph_len 1)) }}
+                <hr class="major" />
+            {{ end }}
+        {{ end }}
+    </div>
+</section>
+{{ end }}

@@ -1,0 +1,29 @@
+<div class="inner">
+    <header class="major special">
+        <h2>{{ .title }}</h2>
+        <p>{{ replace .subtitle "\n" "<br />" | safeHTML }}</p>
+    </header>
+    <div class="features">
+        <ul>
+            {{ range $entry := .features.left_section }}
+            <li>
+                <span class="icon alt major {{ $entry.icon }}"></span>
+                <h3>{{ $entry.title }}</h3>
+                <p>{{ $entry.text }}</p>
+            </li>
+            {{ end }}
+        </ul>
+        {{ if .features.img_path }}
+        <span class="image"><img src="{{ .features.img_path | relURL }}" alt="" /></span>
+        {{ end }}
+        <ul>
+            {{ range $entry := .features.right_section }}
+            <li>
+                <span class="icon alt major {{ $entry.icon }}"></span>
+                <h3>{{ $entry.title }}</h3>
+                <p>{{ $entry.text }}</p>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>

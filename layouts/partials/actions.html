@@ -1,0 +1,11 @@
+<div class="inner">
+    <header class="major special alt">
+        <h2>{{ .title }}</h2>
+        <p>{{ replace .subtitle "\n" "<br />" | safeHTML }}</p>
+    </header>
+    {{ if .home_button }}
+    <ul class="actions special">
+        <li><a href="{{ .home_button.link }}" class="button primary wide">{{ .home_button.text }}</a></li>
+    </ul>
+    {{ end }}
+</div>

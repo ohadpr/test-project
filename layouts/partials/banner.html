@@ -1,0 +1,12 @@
+<section id="banner">
+    <div class="content">
+        <header class="major special">
+            <h1>{{ replace .Site.Params.banner.title "\n" "<br />" | safeHTML }}</h1>
+        </header>
+        {{ if .Site.Params.banner.home_button }}
+        <ul class="actions special">
+            <li><a href="{{ .Site.Params.banner.home_button.link }}" class="button primary wide scrolly">{{ .Site.Params.banner.home_button.text }}</a></li>
+        </ul>
+        {{ end }}
+    </div>
+</section>

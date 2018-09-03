@@ -1,0 +1,21 @@
+<div class="inner">
+    <header class="major special">
+        <h2>{{ .title }}</h2>
+        <p>{{ replace .subtitle "\n" "<br />" | safeHTML }}</p>
+    </header>
+    <div class="spotlights">
+        {{ range $entries := .home_spotlights }}
+        <section>
+            {{ if $entries.img_path }}
+            <div class="image"><img src="{{ $entries.img_path | relURL }}" alt="" /></div>
+            {{ end }}
+            <div class="content">
+                <header class="major">
+                    <h3>{{ $entries.title }}</h3>
+                </header>
+                <p>{{ $entries.text }}</p>
+            </div>
+        </section>
+        {{ end }}
+    </div>
+</div>

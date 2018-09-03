@@ -1,0 +1,42 @@
+title: Hyperbolic
+params:
+  sass:
+    palette: blue
+    palettes:
+      blue:
+        accent1: '#4797ec'
+        accent2: '#884beb'
+      green:
+        accent1: '#31d79b'
+        accent2: '#4b76eb'
+      orange:
+        accent1: '#f54a6f'
+        accent2: '#debf55'
+  footer:
+    social_links:
+      - title: Twitter
+        icon: fa-twitter
+        link_url: '#'
+      - title: Facebook
+        icon: fa-facebook
+        link_url: '#'
+      - title: Instagram
+        icon: fa-instagram
+        link_url: '#'
+      - title: Email
+        icon: fa-envelope-o
+        link_url: '#'
+      - title: Phone
+        icon: fa-phone
+        link_url: '#'
+    copyright: '&copy; Hyperbolic. All rights reserved.'
+  banner:
+    title: |-
+      Ipsum dolor eu magna
+      consequat lorem
+    home_button:
+      text: Get Started
+      link: '#first'
+baseURL: /
+disableKinds:
+  - RSS
